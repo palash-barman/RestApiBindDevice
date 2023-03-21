@@ -86,7 +86,7 @@ final _authController=Get.put(AuthController());
                   }
           
           
-              }, child: Text("Login"),style: ElevatedButton.styleFrom(fixedSize: Size(200.w
+              }, child:  Text("Login"),style: ElevatedButton.styleFrom(fixedSize: Size(200.w
               , 50.h)),),
                   SizedBox(height: 45.h,),
                   

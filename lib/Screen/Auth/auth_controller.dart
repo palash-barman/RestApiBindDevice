@@ -31,7 +31,7 @@ var isLoginLoading=false.obs;
 
   // all token
   String fcmToken = "";
-  String? responseToken;
+  late String dhKey;
 
   @override
   void onInit() {
@@ -115,7 +115,7 @@ var isLoginLoading=false.obs;
   bindDevice() async {
     try {
       var result = await ApiService.postBindDevice(
-          source: "com.example.rest_api_task",
+          source: "com.palash.barman",
           token: fcmToken,
           optionals: deviceData);
       if (result.runtimeType == int) {
@@ -123,7 +123,7 @@ var isLoginLoading=false.obs;
           print("Bind device error.");
         }
       } else {
-        responseToken = result;
+        dhKey = result;
       }
     } on Exception catch (e) {
       if (kDebugMode) {
@@ -142,7 +142,7 @@ var isLoginLoading=false.obs;
           "confirmPassword":conPassTextCtrl.text
       };
 
-      var result = await ApiService.signUp(body:body , devNoteInfo: responseToken!);
+      var result = await ApiService.signUp(body:body , devNoteInfo: dhKey);
       if (result.runtimeType==int) {
         if (kDebugMode) {
           print("User singup error.");
@@ -169,6 +169,7 @@ var isLoginLoading=false.obs;
 handleLogin() async {
     try {
       isLoginLoading(true);
+      print("responseToken : $dhKey");
       Map<String,dynamic> body={
           
           "email":loginEmailTextCtrl.text,
@@ -176,7 +177,7 @@ handleLogin() async {
           
       };
 
-      var result = await ApiService.login(body:body , devNoteInfo: responseToken!);
+      var result = await ApiService.login(body:body , devNoteInfo: dhKey);
       if (result.runtimeType==int) {
         if (kDebugMode) {
           print("User login error.");

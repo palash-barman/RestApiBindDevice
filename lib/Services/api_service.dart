@@ -15,7 +15,7 @@ class ApiService {
       required Map<String, dynamic> optionals}) async {
     try {
       var headers = {
-        'source': 'com.example.rest_api_task',
+        'source': 'com.palash.barman',
         'Content-Type': 'application/json'
       };
       var body = json
@@ -24,8 +24,8 @@ class ApiService {
           body: body, headers: headers);
       if (response.statusCode == 200) {
         Map d = json.decode(response.body);
-
-        return d["data"]["device"]["token"];
+          print("data : $d");
+        return d["data"]["device"]["dhKey"];
       } else {
         if (kDebugMode) {
           print(response.reasonPhrase);
@@ -44,8 +44,8 @@ class ApiService {
       {required Map<String, dynamic> body, required String devNoteInfo}) async {
     try {
       var headers = {
-        'source': 'com.example.rest_api_task',
-        'device': devNoteInfo,
+        'source': 'com.palash.barman',
+        'device':devNoteInfo,
         'Content-Type': 'application/json'
       };
 
@@ -74,7 +74,7 @@ class ApiService {
       {required Map<String, dynamic> body, required String devNoteInfo}) async {
     try {
       var headers = {
-        'source': 'com.example.rest_api_task',
+        'source':'com.palash.barman',
         'device': devNoteInfo,
         'Content-Type': 'application/json'
       };
