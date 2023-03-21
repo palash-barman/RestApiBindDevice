@@ -1,4 +1,4 @@
-package com.example.rest_api_task
+package com.palash.barman
 
 import io.flutter.embedding.android.FlutterActivity
 

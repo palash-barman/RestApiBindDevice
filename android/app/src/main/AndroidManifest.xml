@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.rest_api_task">
+    package="com.palash.barman">
    <application
         android:label="rest_api_task"
         android:name="${applicationName}"

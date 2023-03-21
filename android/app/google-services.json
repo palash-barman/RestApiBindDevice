@@ -9,7 +9,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:144058992707:android:da5971001e3bdadba72cf6",
         "android_client_info": {
-          "package_name": "com.example.rest_api_task"
+          "package_name": "com.palash.barman"
         }
       },
       "oauth_client": [
@@ -17,7 +17,7 @@
           "client_id": "144058992707-4ejssendac4ik9jaa3k3fdbdcr377un3.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.example.rest_api_task",
+            "package_name": "com.palash.barman",
             "certificate_hash": "6cdf30c63ba4a10c380ef200b9b38ecc87b2f878"
           }
         },
